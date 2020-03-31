@@ -2,28 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="horizontal">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-
-        <Button
-            android:id="@+id/buttonC"
-            style="@style/FunctionalButton"
-            android:gravity="center"
-            android:onClick="onDeleteClicked"
-            android:text="C"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/buttonChangeSign"
-            style="@style/FunctionalButton"
-            android:gravity="center"
-            android:onClick="onChangeSignClicked"
-            android:text="-/+"
-            android:textStyle="bold" />
+        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
         <Button
             android:id="@+id/ButtonCe"
@@ -31,29 +16,6 @@
             android:gravity="center"
             android:onClick="onClearClicked"
             android:text="CE"
-            android:textStyle="bold" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-
-        <Button
-            android:id="@+id/button7"
-            style="@style/NumberButton"
-            android:gravity="center"
-            android:onClick="onNumClicked"
-            android:text="7"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/button8"
-            style="@style/NumberButton"
-            android:gravity="center"
-            android:onClick="onNumClicked"
-            android:text="8"
             android:textStyle="bold" />
 
         <Button
@@ -65,71 +27,11 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/buttonDiv"
-            style="@style/FunctionalButton"
-            android:gravity="center"
-            android:onClick="onOperationClicked"
-            android:text="/"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-
-        <Button
-            android:id="@+id/button4"
-            style="@style/NumberButton"
-            android:gravity="center"
-            android:onClick="onNumClicked"
-            android:text="4"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/button5"
-            style="@style/NumberButton"
-            android:gravity="center"
-            android:onClick="onNumClicked"
-            android:text="5"
-            android:textStyle="bold" />
-
-        <Button
             android:id="@+id/button6"
             style="@style/NumberButton"
             android:gravity="center"
             android:onClick="onNumClicked"
             android:text="6"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/buttonMul"
-            style="@style/FunctionalButton"
-            android:gravity="center"
-            android:onClick="onOperationClicked"
-            android:text="*"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-
-        <Button
-            android:id="@+id/button1"
-            style="@style/NumberButton"
-            android:gravity="center"
-            android:onClick="onNumClicked"
-            android:text="1"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/button2"
-            style="@style/NumberButton"
-            android:gravity="center"
-            android:onClick="onNumClicked"
-            android:text="2"
             android:textStyle="bold" />
 
         <Button
@@ -141,26 +43,51 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/buttonMin"
-            style="@style/FunctionalButton"
-            android:gravity="center"
-            android:onClick="onMinusClicked"
-            android:text="-"
-            android:textStyle="bold" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-
-        <Button
             android:id="@+id/buttonPoint"
             style="@style/NumberButton"
             android:gravity="center"
             android:onClick="onPointClicked"
             android:text="."
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/buttonDiv"
+            style="@style/FunctionalButton"
+            android:gravity="center"
+            android:onClick="onOperationClicked"
+            android:text="/"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button8"
+            style="@style/NumberButton"
+            android:gravity="center"
+            android:onClick="onNumClicked"
+            android:text="8"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button5"
+            style="@style/NumberButton"
+            android:gravity="center"
+            android:onClick="onNumClicked"
+            android:text="5"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button2"
+            style="@style/NumberButton"
+            android:gravity="center"
+            android:onClick="onNumClicked"
+            android:text="2"
             android:textStyle="bold" />
 
         <Button
@@ -171,13 +98,70 @@
             android:text="0"
             android:textStyle="bold" />
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
         <Button
-            android:id="@+id/buttonEq"
-            style="@style/EqualButton"
+            android:id="@+id/buttonMul"
+            style="@style/FunctionalButton"
             android:gravity="center"
-            android:onClick="onEqualClicked"
-            android:text="="
+            android:onClick="onOperationClicked"
+            android:text="*"
             android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button7"
+            style="@style/NumberButton"
+            android:gravity="center"
+            android:onClick="onNumClicked"
+            android:text="7"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button4"
+            style="@style/NumberButton"
+            android:gravity="center"
+            android:onClick="onNumClicked"
+            android:text="4"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/button1"
+            style="@style/NumberButton"
+            android:gravity="center"
+            android:onClick="onNumClicked"
+            android:text="1"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/buttonChangeSign"
+            style="@style/NumberButton"
+            android:gravity="center"
+            android:onClick="onChangeSignClicked"
+            android:text="-/+"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/buttonC"
+            style="@style/FunctionalButton"
+            android:gravity="center"
+            android:onClick="onDeleteClicked"
+            android:text="C"
+            android:textStyle="bold"
+            />
 
         <Button
             android:id="@+id/buttonPlus"
@@ -185,7 +169,24 @@
             android:gravity="center"
             android:onClick="onOperationClicked"
             android:text="+"
-            android:textStyle="bold" />
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/buttonMin"
+            style="@style/FunctionalButton"
+            android:gravity="center"
+            android:onClick="onMinusClicked"
+            android:text="-"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/buttonEq"
+            style="@style/EqualButton"
+            android:gravity="center"
+            android:onClick="onEqualClicked"
+            android:text="="
+            android:textStyle="bold"
+            android:layout_weight="0.75"/>
 
     </LinearLayout>
 

@@ -11,7 +11,7 @@
         layout="@layout/current_input"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"/>
 
     <include
         layout="@layout/result_input"
@@ -20,8 +20,8 @@
         android:layout_weight="0.55" />
 
     <include
-        layout="@layout/simple_calc_keyboard"
+        layout="@layout/advance_calc_keyboard"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="5.45"/>
+        android:layout_weight="5.45" />
 </LinearLayout>

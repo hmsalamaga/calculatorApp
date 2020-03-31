@@ -1,258 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout
-xmlns:android="http://schemas.android.com/apk/res/android"
-android:layout_width="match_parent"
-android:layout_height="match_parent">
-
-<TableRow
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_weight="0.5">
+    android:orientation="horizontal"
+    android:weightSum="6">
 
-    <Button
-        android:id="@+id/buttonC"
-        android:onClick="onDeleteClicked"
-        android:text="C"
-        style="@style/FunctionalButton"
-        android:gravity="center"
-        android:textStyle="bold" />
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/buttonChangeSign"
-        android:onClick="onChangeSignClicked"
-        android:text="-/+"
-        style="@style/FunctionalButton"
-        android:gravity="center"
-        android:textStyle="bold" />
+        <Button
+            android:id="@+id/ButtonSin"
+            style="@style/FunctionalButton"
+            android:gravity="center"
+            android:onClick="onSinClicked"
+            android:text="Sin"
+            android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/ButtonCe"
-        android:onClick="onClearClicked"
-        android:text="CE"
-        style="@style/FunctionalButton"
-        android:gravity="center"
-        android:textStyle="bold" />
+        <Button
+            android:id="@+id/ButtonCos"
+            style="@style/FunctionalButton"
+            android:gravity="center"
+            android:onClick="onCosClicked"
+            android:text="Cos"
+            android:textStyle="bold" />
 
-</TableRow>
+        <Button
+            android:id="@+id/ButtonTan"
+            style="@style/FunctionalButton"
+            android:gravity="center"
+            android:onClick="onTanClicked"
+            android:text="Tan"
+            android:textStyle="bold" />
 
-<TableRow
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_weight="1">
+        <Button
+            android:id="@+id/ButtonPerc"
+            style="@style/FunctionalButton"
+            android:gravity="center"
+            android:onClick="onPercClicked"
+            android:text="%"
+            android:textStyle="bold"/>
 
-    <Button
-        android:id="@+id/buttonSin"
-        android:onClick="onNumClicked"
-        android:text="sin"
-        style="@style/FunctionalButton"
-        android:gravity="center"
-        android:textStyle="bold" />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/buttonCos"
-        android:onClick="onNumClicked"
-        android:text="cos"
-        style="@style/FunctionalButton"
-        android:gravity="center"
-        android:textStyle="bold" />
+    <LinearLayout
+        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/buttonTan"
-        android:onClick="onNumClicked"
-        android:text="tan"
-        style="@style/FunctionalButton"
-        android:gravity="center"
-        android:textStyle="bold" />
-</TableRow>
+        <Button
+            android:id="@+id/ButtonLn"
+            style="@style/FunctionalButton"
+            android:gravity="center"
+            android:onClick="onLnClicked"
+            android:text="Ln"
+            android:textStyle="bold" />
 
-<TableRow
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_weight="1">
+        <Button
+            android:id="@+id/ButtonLog"
+            style="@style/FunctionalButton"
+            android:gravity="center"
+            android:onClick="onLogClicked"
+            android:text="Log"
+            android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/buttonSqrt"
-        android:onClick="onNumClicked"
-        android:text="√"
-        style="@style/FunctionalButton"
-        android:gravity="center"
-        android:textStyle="bold" />
+        <Button
+            android:id="@+id/ButtonSqrt"
+            style="@style/FunctionalButton"
+            android:gravity="center"
+            android:onClick="onSqrtClicked"
+            android:text="√"
+            android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/buttonPower"
-        android:onClick="onNumClicked"
-        android:text="^"
-        style="@style/FunctionalButton"
-        android:gravity="center"
-        android:textStyle="bold" />
+        <Button
+            android:id="@+id/ButtonPow"
+            style="@style/FunctionalButton"
+            android:gravity="center"
+            android:onClick="onPowClicked"
+            android:text="^"
+            android:textStyle="bold"/>
 
-    <Button
-        android:id="@+id/buttonLn"
-        android:onClick="onNumClicked"
-        android:text="ln"
-        style="@style/FunctionalButton"
-        android:gravity="center"
-        android:textStyle="bold" />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/buttonLog"
-        android:onClick="onOperationClicked"
-        android:text="log"
-        style="@style/FunctionalButton"
-        android:gravity="center"
-        android:textStyle="bold" />
-</TableRow>
+    <include
+        layout="@layout/simple_calc_keyboard"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="4"/>
 
-<TableRow
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_weight="1">
+</LinearLayout>
 
-    <Button
-        android:id="@+id/button7"
-        android:onClick="onNumClicked"
-        android:text="7"
-        style="@style/NumberButton"
-        android:gravity="center"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/button8"
-        android:onClick="onNumClicked"
-        android:text="8"
-        style="@style/NumberButton"
-        android:gravity="center"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/button9"
-        android:onClick="onNumClicked"
-        android:text="9"
-        style="@style/NumberButton"
-        android:gravity="center"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/buttonDiv"
-        android:onClick="onOperationClicked"
-        android:text="/"
-        style="@style/FunctionalButton"
-        android:gravity="center"
-        android:textStyle="bold" />
-</TableRow>
-
-<TableRow
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_weight="1">
-
-    <Button
-        android:id="@+id/button4"
-        android:onClick="onNumClicked"
-        android:text="4"
-        style="@style/NumberButton"
-        android:gravity="center"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/button5"
-        android:onClick="onNumClicked"
-        android:text="5"
-        style="@style/NumberButton"
-        android:gravity="center"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/button6"
-        android:onClick="onNumClicked"
-        android:text="6"
-        style="@style/NumberButton"
-        android:gravity="center"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/buttonMul"
-        android:onClick="onOperationClicked"
-        android:text="*"
-        style="@style/FunctionalButton"
-        android:gravity="center"
-        android:textStyle="bold" />
-</TableRow>
-
-<TableRow
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_weight="1">
-
-    <Button
-        android:id="@+id/button1"
-        android:onClick="onNumClicked"
-        android:text="1"
-        style="@style/NumberButton"
-        android:gravity="center"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/button2"
-        android:onClick="onNumClicked"
-        android:text="2"
-        style="@style/NumberButton"
-        android:gravity="center"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/button3"
-        android:onClick="onNumClicked"
-        android:text="3"
-        style="@style/NumberButton"
-        android:gravity="center"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/buttonMin"
-        android:onClick="onMinusClicked"
-        android:text="-"
-        style="@style/FunctionalButton"
-        android:gravity="center"
-        android:textStyle="bold" />
-</TableRow>
-
-<TableRow
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_weight="1">
-
-    <Button
-        android:id="@+id/buttonPoint"
-        android:onClick="onPointClicked"
-        android:text="."
-        style="@style/NumberButton"
-        android:gravity="center"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/button0"
-        android:onClick="onNumClicked"
-        android:text="0"
-        style="@style/NumberButton"
-        android:gravity="center"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/buttonEq"
-        android:onClick="onEqualClicked"
-        android:text="="
-        style="@style/EqualButton"
-        android:gravity="center"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/buttonPlus"
-        android:onClick="onOperationClicked"
-        android:text="+"
-        style="@style/FunctionalButton"
-        android:gravity="center"
-        android:textStyle="bold" />
-
-</TableRow>
-</TableLayout>
