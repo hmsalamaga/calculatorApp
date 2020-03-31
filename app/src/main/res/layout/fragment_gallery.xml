@@ -1,21 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout
+<TextView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/textView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:weightSum="7">
-
-    <include
-        layout="@layout/result_input"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2"/>
-
-    <include
-        layout="@layout/advance_calc_keyboard"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="5"/>
-</LinearLayout>
+    android:background="@color/white"
+    android:freezesText="true"
+    android:gravity="center"
+    android:maxLines="3"
+    android:text="@string/author"
+    android:textAppearance="@android:style/TextAppearance.DeviceDefault"
+    android:textSize="30sp"
+    android:textStyle="bold" />
