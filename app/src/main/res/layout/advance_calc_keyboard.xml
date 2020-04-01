@@ -15,32 +15,40 @@
             android:id="@+id/ButtonSin"
             style="@style/FunctionalButton"
             android:gravity="center"
-            android:onClick="onSinClicked"
-            android:text="Sin"
+            android:onClick="onButtonFunctionClicked"
+            android:text="sin"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/ButtonCos"
             style="@style/FunctionalButton"
             android:gravity="center"
-            android:onClick="onCosClicked"
-            android:text="Cos"
+            android:onClick="onButtonFunctionClicked"
+            android:text="cos"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/ButtonTan"
             style="@style/FunctionalButton"
             android:gravity="center"
-            android:onClick="onTanClicked"
-            android:text="Tan"
+            android:onClick="onButtonFunctionClicked"
+            android:text="tan"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/ButtonPerc"
             style="@style/FunctionalButton"
             android:gravity="center"
-            android:onClick="onPercClicked"
-            android:text="%"
+            android:onClick="onPiClicked"
+            android:text="π"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/ButtonOpenBracket"
+            style="@style/FunctionalButton"
+            android:gravity="center"
+            android:onClick="onButtonCharClicked"
+            android:text="("
             android:textStyle="bold"/>
 
     </LinearLayout>
@@ -55,16 +63,16 @@
             android:id="@+id/ButtonLn"
             style="@style/FunctionalButton"
             android:gravity="center"
-            android:onClick="onLnClicked"
-            android:text="Ln"
+            android:onClick="onButtonFunctionClicked"
+            android:text="ln"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/ButtonLog"
             style="@style/FunctionalButton"
             android:gravity="center"
-            android:onClick="onLogClicked"
-            android:text="Log"
+            android:onClick="onButtonFunctionClicked"
+            android:text="log"
             android:textStyle="bold" />
 
         <Button
@@ -79,8 +87,16 @@
             android:id="@+id/ButtonPow"
             style="@style/FunctionalButton"
             android:gravity="center"
-            android:onClick="onPowClicked"
+            android:onClick="onButtonCharClicked"
             android:text="^"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/ButtonCloseBracket"
+            style="@style/FunctionalButton"
+            android:gravity="center"
+            android:onClick="onButtonCharClicked"
+            android:text=")"
             android:textStyle="bold"/>
 
     </LinearLayout>

@@ -2,13 +2,16 @@ package com.example.calculatorapp;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 import android.view.Menu;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+import com.example.calculatorapp.ui.home.HomeFragment;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -20,6 +23,11 @@ import androidx.appcompat.widget.Toolbar;
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
+    StringBuilder editText = new StringBuilder();
+    private HomeFragment homeFragment;
+    private FragmentManager fragmentManager;
+    TextView currentTextView;
+    TextView resultTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
+
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
@@ -38,6 +47,16 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        fragmentManager = getSupportFragmentManager();
+        homeFragment = (HomeFragment) fragmentManager.findFragmentById(R.id.nav_host_fragment);
+        View calculatorView = getLayoutInflater().inflate(R.layout.fragment_home, null);
+        currentTextView = calculatorView.findViewById(R.id.currentTextView);
+        fragmentManager
+                .beginTransaction()
+                .detach(homeFragment)
+                .attach(homeFragment)
+                .commit();
     }
 
     @Override
@@ -56,5 +75,44 @@ public class MainActivity extends AppCompatActivity {
 
     public void onExitClicked(MenuItem item) {
         System.exit(0);
+    }
+
+    public void onButtonCharClicked(View view) {
+        Button clickedButton = (Button)view;
+        editText.append(clickedButton.getText().toString());
+        setCurrentTextView();
+    }
+
+    public void onButtonFunctionClicked(View view) {
+        Button clickedButton = (Button)view;
+        editText.append(clickedButton.getText().toString()).append('(');
+        setCurrentTextView();
+    }
+
+    public void onPiClicked(View view) {
+        editText.append("pi");
+        setCurrentTextView();
+    }
+
+    public void onSqrtClicked(View view) {
+        editText.append("sqrt(");
+        setCurrentTextView();
+    }
+    
+    public void setCurrentTextView() {
+        homeFragment.setCurrentTextView(editText);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle savedInstanceState) {
+        savedInstanceState.putString("currentTextView", editText.toString());
+        super.onSaveInstanceState(savedInstanceState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        editText = new StringBuilder(savedInstanceState.getString("currentTextView"));
+        setCurrentTextView();
     }
 }

@@ -19,34 +19,34 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/button9"
+            android:id="@+id/button7"
             style="@style/NumberButton"
             android:gravity="center"
-            android:onClick="onNumClicked"
-            android:text="9"
+            android:onClick="onButtonCharClicked"
+            android:text="7"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/button6"
             style="@style/NumberButton"
             android:gravity="center"
-            android:onClick="onNumClicked"
-            android:text="6"
+            android:onClick="onButtonCharClicked"
+            android:text="4"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/button3"
             style="@style/NumberButton"
             android:gravity="center"
-            android:onClick="onNumClicked"
-            android:text="3"
+            android:onClick="onButtonCharClicked"
+            android:text="1"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/buttonPoint"
             style="@style/NumberButton"
             android:gravity="center"
-            android:onClick="onPointClicked"
+            android:onClick="onButtonCharClicked"
             android:text="."
             android:textStyle="bold" />
 
@@ -62,7 +62,7 @@
             android:id="@+id/buttonDiv"
             style="@style/FunctionalButton"
             android:gravity="center"
-            android:onClick="onOperationClicked"
+            android:onClick="onButtonCharClicked"
             android:text="/"
             android:textStyle="bold" />
 
@@ -70,7 +70,7 @@
             android:id="@+id/button8"
             style="@style/NumberButton"
             android:gravity="center"
-            android:onClick="onNumClicked"
+            android:onClick="onButtonCharClicked"
             android:text="8"
             android:textStyle="bold" />
 
@@ -78,7 +78,7 @@
             android:id="@+id/button5"
             style="@style/NumberButton"
             android:gravity="center"
-            android:onClick="onNumClicked"
+            android:onClick="onButtonCharClicked"
             android:text="5"
             android:textStyle="bold" />
 
@@ -86,7 +86,7 @@
             android:id="@+id/button2"
             style="@style/NumberButton"
             android:gravity="center"
-            android:onClick="onNumClicked"
+            android:onClick="onButtonCharClicked"
             android:text="2"
             android:textStyle="bold" />
 
@@ -94,7 +94,7 @@
             android:id="@+id/button0"
             style="@style/NumberButton"
             android:gravity="center"
-            android:onClick="onNumClicked"
+            android:onClick="onButtonCharClicked"
             android:text="0"
             android:textStyle="bold" />
 
@@ -110,41 +110,41 @@
             android:id="@+id/buttonMul"
             style="@style/FunctionalButton"
             android:gravity="center"
-            android:onClick="onOperationClicked"
+            android:onClick="onButtonCharClicked"
             android:text="*"
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/button7"
+            android:id="@+id/button9"
             style="@style/NumberButton"
             android:gravity="center"
-            android:onClick="onNumClicked"
-            android:text="7"
+            android:onClick="onButtonCharClicked"
+            android:text="9"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/button4"
             style="@style/NumberButton"
             android:gravity="center"
-            android:onClick="onNumClicked"
-            android:text="4"
+            android:onClick="onButtonCharClicked"
+            android:text="6"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/button1"
             style="@style/NumberButton"
             android:gravity="center"
-            android:onClick="onNumClicked"
-            android:text="1"
+            android:onClick="onButtonCharClicked"
+            android:text="3"
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/buttonChangeSign"
+            android:id="@+id/ButtonPerc"
             style="@style/NumberButton"
             android:gravity="center"
-            android:onClick="onChangeSignClicked"
-            android:text="-/+"
-            android:textStyle="bold" />
+            android:onClick="onButtonCharClicked"
+            android:text="%"
+            android:textStyle="bold"/>
 
     </LinearLayout>
 
@@ -167,7 +167,7 @@
             android:id="@+id/buttonPlus"
             style="@style/FunctionalButton"
             android:gravity="center"
-            android:onClick="onOperationClicked"
+            android:onClick="onButtonCharClicked"
             android:text="+"
             android:textStyle="bold"/>
 
@@ -175,7 +175,7 @@
             android:id="@+id/buttonMin"
             style="@style/FunctionalButton"
             android:gravity="center"
-            android:onClick="onMinusClicked"
+            android:onClick="onButtonCharClicked"
             android:text="-"
             android:textStyle="bold"/>
 
