@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
     StringBuilder editText = new StringBuilder();
     private HomeFragment homeFragment;
     private FragmentManager fragmentManager;
-    TextView currentTextView;
     TextView resultTextView;
 
     @Override
@@ -51,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
         fragmentManager = getSupportFragmentManager();
         homeFragment = (HomeFragment) fragmentManager.findFragmentById(R.id.nav_host_fragment);
         View calculatorView = getLayoutInflater().inflate(R.layout.fragment_home, null);
-        currentTextView = calculatorView.findViewById(R.id.currentTextView);
         fragmentManager
                 .beginTransaction()
                 .detach(homeFragment)
