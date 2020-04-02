@@ -8,8 +8,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.NavHostController;
 
+import com.example.calculatorapp.MainActivity;
 import com.example.calculatorapp.R;
 import org.mariuszgromada.math.mxparser.*;
 
@@ -23,6 +23,7 @@ public class HomeFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         currentTextView = root.findViewById(R.id.currentTextView);
         resultTextView = root.findViewById(R.id.resultTextView);
+        ((MainActivity)getActivity()).setHomeFragment(this);
         return root;
     }
 

@@ -5,12 +5,10 @@ import android.view.MenuItem;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.example.calculatorapp.ui.home.HomeFragment;
 import com.google.android.material.navigation.NavigationView;
 
-import androidx.fragment.app.FragmentManager;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -40,16 +38,10 @@ public class MainActivity extends AppCompatActivity {
                 R.id.nav_home, R.id.nav_gallery)
                 .setDrawerLayout(drawer)
                 .build();
+
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
-
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        homeFragment = new HomeFragment();
-        fragmentManager
-                .beginTransaction()
-                .add(R.id.nav_host_fragment, homeFragment)
-                .commit();
     }
 
     @Override
@@ -112,6 +104,14 @@ public class MainActivity extends AppCompatActivity {
         setCurrentTextView();
     }
 
+    public void setHomeFragment(HomeFragment homeFragment) {
+        this.homeFragment = homeFragment;
+    }
+
+    public void clearEditText() {
+        editText = new StringBuilder();
+    }
+
     @Override
     protected void onSaveInstanceState(Bundle savedInstanceState) {
         savedInstanceState.putString("currentTextView", editText.toString());
@@ -122,6 +122,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         editText = new StringBuilder(savedInstanceState.getString("currentTextView"));
-//        setCurrentTextView();
+        setCurrentTextView();
     }
 }
