@@ -36,20 +36,20 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/ButtonPerc"
+            android:id="@+id/ButtonLog"
             style="@style/FunctionalButton"
             android:gravity="center"
-            android:onClick="onPiClicked"
-            android:text="π"
-            android:textStyle="bold"/>
+            android:onClick="onButtonFunctionClicked"
+            android:text="log"
+            android:textStyle="bold" />
 
         <Button
-            android:id="@+id/ButtonOpenBracket"
+            android:id="@+id/ButtonLn"
             style="@style/FunctionalButton"
             android:gravity="center"
-            android:onClick="onButtonCharClicked"
-            android:text="("
-            android:textStyle="bold"/>
+            android:onClick="onButtonFunctionClicked"
+            android:text="ln"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
@@ -60,19 +60,19 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/ButtonLn"
+            android:id="@+id/ButtonPow"
             style="@style/FunctionalButton"
             android:gravity="center"
-            android:onClick="onButtonFunctionClicked"
-            android:text="ln"
+            android:onClick="onButtonCharClicked"
+            android:text="^"
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/ButtonLog"
+            android:id="@+id/ButtonPerc"
             style="@style/FunctionalButton"
             android:gravity="center"
-            android:onClick="onButtonFunctionClicked"
-            android:text="log"
+            android:onClick="onPiClicked"
+            android:text="π"
             android:textStyle="bold" />
 
         <Button
@@ -92,12 +92,12 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/ButtonPow"
+            android:id="@+id/ButtonOpenBracket"
             style="@style/FunctionalButton"
             android:gravity="center"
             android:onClick="onButtonCharClicked"
-            android:text="^"
-            android:textStyle="bold"/>
+            android:text="("
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/ButtonCloseBracket"
@@ -113,7 +113,7 @@
         layout="@layout/simple_calc_keyboard"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="4"/>
+        android:layout_weight="4" />
 
 </LinearLayout>
 

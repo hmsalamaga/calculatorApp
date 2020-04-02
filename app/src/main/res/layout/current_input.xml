@@ -16,6 +16,7 @@
         android:freezesText="true"
         android:gravity="bottom|end"
         android:maxLines="1"
+        android:text="TEEEEST"
         android:paddingEnd="5dp"
         android:paddingBottom="5dp"
         android:textSize="30sp"
