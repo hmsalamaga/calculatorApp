@@ -1,4 +1,4 @@
-package com.example.calculatorapp.ui.home;
+package com.example.calculatorapp.ui.calculator;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,32 +13,32 @@ import com.example.calculatorapp.MainActivity;
 import com.example.calculatorapp.R;
 import org.mariuszgromada.math.mxparser.*;
 
-public class HomeFragment extends Fragment {
+public class CalculatorFragment extends Fragment {
 
     private TextView currentTextView;
     private TextView resultTextView;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
+        View root = inflater.inflate(R.layout.fragment_calculator, container, false);
         currentTextView = root.findViewById(R.id.currentTextView);
         resultTextView = root.findViewById(R.id.resultTextView);
-        ((MainActivity)getActivity()).setHomeFragment(this);
+        ((MainActivity)getActivity()).setCalculatorFragment(this);
         return root;
     }
 
-    public void setCurrentTextView(StringBuilder editText) {
-        currentTextView.setText(editText);
-        displayCalculatedValue(resultTextView, editText);
+    public void setCurrentTextView(StringBuilder buffer) {
+        currentTextView.setText(buffer);
+        displayCalculatedValue(resultTextView, buffer);
     }
 
-    public void moveResultToCurrent(StringBuilder editText) {
+    public void moveResultToCurrent(StringBuilder buffer) {
         resultTextView.setText("");
-        displayCalculatedValue(currentTextView, editText);
+        displayCalculatedValue(currentTextView, buffer);
     }
 
-    public void displayCalculatedValue(TextView textView, StringBuilder editText) {
-        Expression e = new Expression(editText.toString());
+    public void displayCalculatedValue(TextView textView, StringBuilder buffer) {
+        Expression e = new Expression(buffer.toString());
         double calculatedValue = e.calculate();
         if (Double.toString(calculatedValue).equals("NaN")) {
             textView.setText("Error");

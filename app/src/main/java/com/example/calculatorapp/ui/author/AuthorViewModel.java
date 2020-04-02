@@ -1,16 +1,16 @@
-package com.example.calculatorapp.ui.home;
+package com.example.calculatorapp.ui.author;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class HomeViewModel extends ViewModel {
+public class AuthorViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public HomeViewModel() {
+    public AuthorViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+        mText.setValue("This is author fragment");
     }
 
     public LiveData<String> getText() {

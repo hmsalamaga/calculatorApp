@@ -76,6 +76,14 @@
             android:textStyle="bold" />
 
         <Button
+            android:id="@+id/ButtonComma"
+            style="@style/FunctionalButton"
+            android:gravity="center"
+            android:onClick="onButtonCharClicked"
+            android:text=","
+            android:textStyle="bold" />
+
+        <Button
             android:id="@+id/ButtonSqrt"
             style="@style/FunctionalButton"
             android:gravity="center"

@@ -1,16 +1,16 @@
-package com.example.calculatorapp.ui.gallery;
+package com.example.calculatorapp.ui.calculator;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class GalleryViewModel extends ViewModel {
+public class CalculatorViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public GalleryViewModel() {
+    public CalculatorViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is gallery fragment");
+        mText.setValue("This is calculator fragment");
     }
 
     public LiveData<String> getText() {

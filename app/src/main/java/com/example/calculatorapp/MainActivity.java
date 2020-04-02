@@ -6,7 +6,7 @@ import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.calculatorapp.ui.home.HomeFragment;
+import com.example.calculatorapp.ui.calculator.CalculatorFragment;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.navigation.NavController;
@@ -20,8 +20,8 @@ import androidx.appcompat.widget.Toolbar;
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-    StringBuilder editText = new StringBuilder();
-    private HomeFragment homeFragment;
+    StringBuilder buffer = new StringBuilder();
+    private CalculatorFragment calculatorFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery)
+                R.id.nav_calculator, R.id.nav_author)
                 .setDrawerLayout(drawer)
                 .build();
 
@@ -64,64 +64,64 @@ public class MainActivity extends AppCompatActivity {
 
     public void onButtonCharClicked(View view) {
         Button clickedButton = (Button) view;
-        editText.append(clickedButton.getText().toString());
+        buffer.append(clickedButton.getText().toString());
         setCurrentTextView();
     }
 
     public void onButtonFunctionClicked(View view) {
         Button clickedButton = (Button) view;
-        editText.append(clickedButton.getText().toString()).append('(');
+        buffer.append(clickedButton.getText().toString()).append('(');
         setCurrentTextView();
     }
 
     public void onPiClicked(View view) {
-        editText.append("pi");
+        buffer.append("pi");
         setCurrentTextView();
     }
 
     public void onSqrtClicked(View view) {
-        editText.append("sqrt(");
+        buffer.append("sqrt(");
         setCurrentTextView();
     }
 
     public void setCurrentTextView() {
-        homeFragment.setCurrentTextView(editText);
+        calculatorFragment.setCurrentTextView(buffer);
     }
 
     public void onEqualClicked(View view) {
-        homeFragment.moveResultToCurrent(editText);
-        editText = new StringBuilder(homeFragment.getCurrentTextViewValue());
+        calculatorFragment.moveResultToCurrent(buffer);
+        buffer = new StringBuilder(calculatorFragment.getCurrentTextViewValue());
     }
 
     public void onClearClicked(View view) {
-        homeFragment.cleanTextViews();
-        editText = new StringBuilder(homeFragment.getCurrentTextViewValue());
+        calculatorFragment.cleanTextViews();
+        buffer = new StringBuilder(calculatorFragment.getCurrentTextViewValue());
     }
 
     public void onDeleteClicked(View view) {
-        if (editText.length() > 0)
-            editText.deleteCharAt(editText.length() - 1);
+        if (buffer.length() > 0)
+            buffer.deleteCharAt(buffer.length() - 1);
         setCurrentTextView();
     }
 
-    public void setHomeFragment(HomeFragment homeFragment) {
-        this.homeFragment = homeFragment;
+    public void setCalculatorFragment(CalculatorFragment calculatorFragment) {
+        this.calculatorFragment = calculatorFragment;
     }
 
-    public void clearEditText() {
-        editText = new StringBuilder();
+    public void clearBuffer() {
+        buffer = new StringBuilder();
     }
 
     @Override
     protected void onSaveInstanceState(Bundle savedInstanceState) {
-        savedInstanceState.putString("currentTextView", editText.toString());
+        savedInstanceState.putString("currentTextView", buffer.toString());
         super.onSaveInstanceState(savedInstanceState);
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        editText = new StringBuilder(savedInstanceState.getString("currentTextView"));
+        buffer = new StringBuilder(savedInstanceState.getString("currentTextView"));
         setCurrentTextView();
     }
 }
