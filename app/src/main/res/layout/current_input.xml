@@ -12,6 +12,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="end"
         android:background="@color/white"
+        android:textColor="@color/black"
         android:freezesText="true"
         android:gravity="bottom|end"
         android:maxLines="1"

@@ -7,27 +7,55 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.calculatorapp.R;
+import org.mariuszgromada.math.mxparser.*;
+
+import static java.lang.Double.NaN;
 
 public class HomeFragment extends NavHostFragment {
 
-    private HomeViewModel homeViewModel;
-    private View root;
     private TextView currentTextView;
+    private TextView resultTextView;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                ViewModelProviders.of(this).get(HomeViewModel.class);
-        root = inflater.inflate(R.layout.fragment_home, container, false);
+        View root = inflater.inflate(R.layout.fragment_home, container, false);
+        currentTextView = root.findViewById(R.id.currentTextView);
+        resultTextView = root.findViewById(R.id.resultTextView);
         return root;
     }
 
     public void setCurrentTextView(StringBuilder editText) {
-        currentTextView = root.findViewById(R.id.currentTextView);
         currentTextView.setText(editText);
+        displayCalculatedValue(resultTextView, editText);
+    }
+
+    public void moveResultToCurrent(StringBuilder editText) {
+        resultTextView.setText("");
+        displayCalculatedValue(currentTextView, editText);
+    }
+
+    public void displayCalculatedValue(TextView textView, StringBuilder editText) {
+        Expression e = new Expression(editText.toString());
+        double calculatedValue = e.calculate();
+        if (Double.toString(calculatedValue).equals("NaN")) {
+            textView.setText("Error");
+        } else if (calculatedValue % 1 == 0) {
+            textView.setText(Integer.toString((int)calculatedValue));
+        } else {
+            textView.setText(Double.toString(calculatedValue));
+        }
+    }
+
+    public void cleanTextViews() {
+        currentTextView.setText("");
+        resultTextView.setText("");
+    }
+
+    public String getCurrentTextViewValue() {
+        return currentTextView.getText().toString();
     }
 }

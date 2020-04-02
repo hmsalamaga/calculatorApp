@@ -11,7 +11,6 @@ import com.example.calculatorapp.ui.home.HomeFragment;
 import com.google.android.material.navigation.NavigationView;
 
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -26,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
     StringBuilder editText = new StringBuilder();
     private HomeFragment homeFragment;
     private FragmentManager fragmentManager;
-    TextView resultTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
 
         fragmentManager = getSupportFragmentManager();
         homeFragment = (HomeFragment) fragmentManager.findFragmentById(R.id.nav_host_fragment);
-        View calculatorView = getLayoutInflater().inflate(R.layout.fragment_home, null);
         fragmentManager
                 .beginTransaction()
                 .detach(homeFragment)
@@ -76,13 +73,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onButtonCharClicked(View view) {
-        Button clickedButton = (Button)view;
+        Button clickedButton = (Button) view;
         editText.append(clickedButton.getText().toString());
         setCurrentTextView();
     }
 
     public void onButtonFunctionClicked(View view) {
-        Button clickedButton = (Button)view;
+        Button clickedButton = (Button) view;
         editText.append(clickedButton.getText().toString()).append('(');
         setCurrentTextView();
     }
@@ -96,9 +93,25 @@ public class MainActivity extends AppCompatActivity {
         editText.append("sqrt(");
         setCurrentTextView();
     }
-    
+
     public void setCurrentTextView() {
         homeFragment.setCurrentTextView(editText);
+    }
+
+    public void onEqualClicked(View view) {
+        homeFragment.moveResultToCurrent(editText);
+        editText = new StringBuilder(homeFragment.getCurrentTextViewValue());
+    }
+
+    public void onClearClicked(View view) {
+        homeFragment.cleanTextViews();
+        editText = new StringBuilder(homeFragment.getCurrentTextViewValue());
+    }
+
+    public void onDeleteClicked(View view) {
+        if (editText.length() > 0)
+            editText.deleteCharAt(editText.length() - 1);
+        setCurrentTextView();
     }
 
     @Override
