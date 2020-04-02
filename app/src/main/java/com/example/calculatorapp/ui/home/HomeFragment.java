@@ -7,18 +7,16 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.navigation.fragment.NavHostFragment;
+import androidx.fragment.app.Fragment;
+import androidx.navigation.NavHostController;
 
 import com.example.calculatorapp.R;
 import org.mariuszgromada.math.mxparser.*;
 
-import static java.lang.Double.NaN;
-
-public class HomeFragment extends NavHostFragment {
+public class HomeFragment extends Fragment {
 
     private TextView currentTextView;
     private TextView resultTextView;
-
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {

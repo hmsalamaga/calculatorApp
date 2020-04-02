@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration mAppBarConfiguration;
     StringBuilder editText = new StringBuilder();
     private HomeFragment homeFragment;
-    private FragmentManager fragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,12 +44,11 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        fragmentManager = getSupportFragmentManager();
-        homeFragment = (HomeFragment) fragmentManager.findFragmentById(R.id.nav_host_fragment);
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        homeFragment = new HomeFragment();
         fragmentManager
                 .beginTransaction()
-                .detach(homeFragment)
-                .attach(homeFragment)
+                .add(R.id.nav_host_fragment, homeFragment)
                 .commit();
     }
 
@@ -124,6 +122,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         editText = new StringBuilder(savedInstanceState.getString("currentTextView"));
-        setCurrentTextView();
+//        setCurrentTextView();
     }
 }
