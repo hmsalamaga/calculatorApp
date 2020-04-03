@@ -40,7 +40,9 @@ public class CalculatorFragment extends Fragment {
     public void displayCalculatedValue(TextView textView, StringBuilder buffer) {
         Expression e = new Expression(buffer.toString());
         double calculatedValue = e.calculate();
-        if (Double.toString(calculatedValue).equals("NaN")) {
+        if (buffer.toString().equals("")) {
+            textView.setText("");
+        } else if (Double.toString(calculatedValue).equals("NaN")) {
             textView.setText("Error");
         } else if (calculatedValue % 1 == 0) {
             textView.setText(Integer.toString((int)calculatedValue));

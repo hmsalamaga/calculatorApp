@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onExitClicked(MenuItem item) {
+        finish();
         System.exit(0);
     }
 
